@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block container %} {% for d in repos %}
+<button type="button" class="collapse">{{ d }}</button>
+<div class="content">
+    {{repos[d]}}
+</div>
+{% endfor %}
+<script>
+    var coll = document.getElementsByClassName('collapse');
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener('click', function() {
+            this.classList.toggle('active');
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    }
+</script> {% endblock %}

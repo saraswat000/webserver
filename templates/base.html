@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link href="{{ url_for('static',filename='style/ui.css')}}" rel='stylesheet'>
+</head>
+
+<body>
+    <nav>
+        <a href="{{ '/' }}">Home</a>
+        <a href="{{ '/wiki' }}">Wiki</a>
+        <a href="{{ '/team' }}">team</a>
+        <a href="{{ '/news' }}">News</a>
+        <a href="https://releax.flarum.cloud/">Community</a>
+        <a href="https://github.com/releax">Github</a>
+    </nav>
+    <heading>
+        {{ heading }}
+    </heading>
+    <subheading>
+        {{ subheading }}
+    </subheading>
+    <space> {% block container %} {% endblock %}
+</body>
+<footer>
+    <p>Made with️ ❤️ in India</p>
+</footer>
+
+</html>

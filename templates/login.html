@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block container %}
+<form action="" method="post">
+    <input style="display: block" type="text" placeholder="User ID" name="userid">
+    <input style="display: block " type="password " placeholder="Passcode " name="passcode ">
+    <button type="submit " value="Login ">Login</button>
+</form>
+{% if err %}
+<p class="error "><strong>Error:</strong> {{ err }}</p>
+{% endif %} {% endblock %}

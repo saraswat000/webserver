@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block container %}
+<card-container>
+    <card>
+        <img src="{{ url_for('static',filename='graphics/team/me.jpg') }}" alt="Avatar" style="border-radius: 50%; ">
+        <topic>itsmanjeet</topic>
+        <subtopic>Core Developer</subtopic>
+    </card>
+    <card>
+        <img src="{{ url_for( 'static',filename='graphics/team/hemant.jpg' ) }} " alt="Avatar " style="max-height: 500px; border-radius: 20%; ">
+        <topic>Hemant Dhankar</topic>
+        <subtopic>Bera na sala kuch na krta</subtopic>
+    </card>
+</card-container>
+
+
+
+
+{% endblock %}
