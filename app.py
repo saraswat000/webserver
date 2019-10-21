@@ -12,31 +12,21 @@ app = Flask(__name__)
 def index():
     return render_template(
         'index.html',
-        title = 'releax.org',
-        heading = 'releax gnu linux',
-        subheading = 'a innovative distro',
-        release = config.release,
-        download_link = config.download_link,
-        download_msg = config.download_msg
+        data = config.release_data
     )
 
 @app.route('/wiki')
 def wiki():
     return render_template(
         'wiki.html',
-        title='wiki',
-        heading = 'releax wiki',
-        subheading = 'version %s' % config.release,
-        defination = config.releax_os_define
+        data = config.release_data
     )
 
 @app.route('/team')
 def team():
     return render_template(
         'team.html',
-        title = 'team',
-        heading = 'releax team',
-        subheading = 'people behind releax'
+        data = config.release_data
     )
 
 '''
