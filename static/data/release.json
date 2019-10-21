@@ -1,0 +1,13 @@
+{
+        "version" : "0.1.b",
+        "release" : "beta",
+        "name" : "beta",
+        "url" : "https://mega.nz/#F!1K4nRaoY!d7xFqXBNo5MC978lcTMfRw",
+
+        "sys" : {
+            "arch" : "x86_64",
+            "min_mem" : "1024 Mib",
+            "min_stor" : "3096 Mib",
+            "proc" : "above Intel pentinum"
+        }
+}
