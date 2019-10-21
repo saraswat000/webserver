@@ -1,18 +1,25 @@
 {% extends 'base.html' %} {% block container %}
-<card-container>
-    <card>
-        <img src="{{ url_for('static',filename='graphics/team/me.jpg') }}" alt="Avatar" style="border-radius: 50%; ">
-        <topic>itsmanjeet</topic>
-        <subtopic>Core Developer</subtopic>
-    </card>
-    <card>
-        <img src="{{ url_for( 'static',filename='graphics/team/hemant.jpg' ) }} " alt="Avatar " style="max-height: 500px; border-radius: 20%; ">
-        <topic>Hemant Dhankar</topic>
-        <subtopic>Bera na sala kuch na krta</subtopic>
-    </card>
-</card-container>
-
-
-
+<div class="team-boxed" style="background-color: rgb(255,255,255);">
+    <div class="container">
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h2 class="text-center">Team </h2>
+            <p class="text-center">people behind releax gnu/linux</p>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: People -->
+        <div class="row people">
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box"><img class="rounded-circle" src="{{ url_for('static',filename='assets/img/me.jpg') }}">
+                    <h3 class="name">Manjeet Saini</h3>
+                    <p class="title">Lead Developer</p>
+                    <p class="description">releax with be the future os for your system</p>
+                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- End: People -->
+    </div>
+</div>
 
 {% endblock %}

@@ -1,43 +1,53 @@
 {% extends 'base.html' %} {% block container %}
-<button>Download</button>
-
-<img src="{{ url_for('static',filename='graphics/looks.png')}}">
-
-<topic>
-    features
-</topic>
-
-<subtopic>
-    things you got from releax
-</subtopic>
-
-<card-container>
-    <card>
-        <h3>Independent</h3>
-        <p>releax os is a independently developed linux distro build from scratch, means new adventure, new everything</p>
-    </card>
-    <card>
-        <h3>Customizable</h3>
-        <p>Obviously its GNU linux a open source linux distro with xfce 4.14 to provide ultimate level of customizablitiy,so that you os with look like in the way you want</p>
-    </card>
-    <card>
-        <h3>Openrc Init</h3>
-        <p>is a service manager maintained by the Gentoo developers. OpenRC is dependency based and works with the system provided init program, normally SysVinit</p>
-    </card>
-</card-container>
-<card-container>
-    <card>
-        <h3>freedom</h3>
-        <p>releax os is free to modify, distribute, redistribute, and whatever you want to do with it</p>
-    </card>
-    <card>
-        <h3>sysmgr</h3>
-        <p>releax os have a homegrown sysmgr that help you to manage your linux</p>
-    </card>
-    <card>
-        <h3>app</h3>
-        <p>'app' homegrown application manager.now with 'app' you no need to search web to download and install your application, just 'app install -your-application-'</p>
-    </card>
-</card-container>
-
-<img src="{{ url_for('static',filename='graphics/daynight.jpg')}}"> {% endblock %}
+<div class="text-center highlight-clean">
+    <div class="container">
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h2 class="text-center">releax gnu/linux</h2>
+            <p class="text-center">a innovative distro</p>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: Buttons -->
+        <div class="buttons"><a class="btn btn-primary" role="button" href="{{ data['url'] }}">Download</a>
+<a class="btn btn-light" href="join.html" role="button">Join Team</a></div>
+        <!-- End: Buttons -->
+    </div><img class="img-fluid d-block" src="{{ url_for('static',filename='assets/img/looks.png') }}" width="500" height="500" style="margin: auto;"></div>
+<!-- End: Highlight Clean -->
+<!-- Start: Features Clean -->
+<div class="features-clean">
+    <div class="container">
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h2 class="text-center">Features</h2>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: Features -->
+        <div class="row features">
+            <div class="col-sm-6 col-lg-4 item">
+                <h3 class="name">Independent</h3>
+                <p class="description">releax gnu/linux is a independently developed gnu/linux distribution, entirely developed by community</p>
+            </div>
+            <div class="col-sm-6 col-lg-4 item">
+                <h3 class="name">Customizable</h3>
+                <p class="description">with the customizablity of xfce desktop enviroment, releax can be customized in the way you want</p>
+            </div>
+            <div class="col-sm-6 col-lg-4 item">
+                <h3 class="name">Openrc init</h3>
+                <p class="description">releax use openrc init system to bootup, to provide a traditional like bootup</p>
+            </div>
+            <div class="col-sm-6 col-lg-4 item">
+                <h3 class="name">Sysmgr</h3>
+                <p class="description">sysmgr is a home grown system manager for releax, that help you to manager you system efficiently and easily</p>
+            </div>
+            <div class="col-sm-6 col-lg-4 item">
+                <h3 class="name">App</h3>
+                <p class="description">app is a home grown application manager for releax, that help to manager your faviourate applications&nbsp;</p>
+            </div>
+            <div class="col-sm-6 col-lg-4 item">
+                <h3 class="name">Freedom and Privacy</h3>
+                <p class="description">releax gnu/linux respect your freedom and privacy</p>
+            </div>
+        </div>
+        <!-- End: Features -->
+    </div>
+</div> {% endblock %}

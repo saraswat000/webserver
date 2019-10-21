@@ -1,73 +1,37 @@
 {% extends 'base.html' %} {% block container %}
-
-<topic>
-    what is relax os and why ?
-</topic>
-<subtopic>
-    {{ defination }}
-</subtopic>
-
-<h3 style="text-align: center">Installation</h3>
-Download the latest releax ISO image and check sha512sum for integerity
-<pre><code>$ sha512sum checksum</code></pre>
-<h4 style="text-align: center">Setup VirtualBox</h4>
-<p>
-    <ul>
-        <li>download VirtualBox</li>
-        <div class="script">
-            <code>$ sudo apt install virtualbox # debian/ubuntu/...based distro</code><br><br>
-            <code>$ sudo pacman -S virtualbox # archlinux</code><br><br>
-            <code>$ sudo dnf install virtualbox # fedora/redhat linux</code>
+<div class="article-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                <!-- Start: Intro -->
+                <div class="intro">
+                    <h1 class="text-center">releax {{ data['version'] }} {{ data['release'] }} handbook </h1><img class="img-fluid" src="{{ url_for('static',filename='assets/img/looks.png') }}"></div>
+                <!-- End: Intro -->
+                <!-- Start: Text -->
+                <div class="text">
+                    <p>releax gnu/linux {{ data['version'] }} {{ data['release'] }} is a testing relese for testers to check it for working on different hardwares and different functionalities</p>
+                    <p>this release can be tested either on virtual environment &nbsp;or on real hardware</p>
+                    <h2>Requirements</h2>
+                    <ul>
+                        <li>Architecture : {{ data["sys"]["arch"] }}</li>
+                        <li>Mininum memory: {{ data["sys"]["min_mem"] }}</li>
+                        <li>Minimum Storage Space: {{ data["sys"]["min_stor"] }}</li>
+                        <li>Processor: {{ data["sys"]["proc"] }}</li>
+                    </ul>
+                    <figure>
+                        <figcaption class="text-left" style="font-size: 20px;color: rgb(51,51,51);font-weight: bold;">To Test</figcaption>
+                    </figure>
+                </div>
+                <!-- End: Text -->
+                <ol>
+                    <li>Setup Enviroment, (i.e. bootable pendrive or virtual environment )</li>
+                    <li>Boot to releax system</li>
+                    <li>when cli login is prompt, login as root with password : root</li>
+                    <li>start lightdm display manager using -&gt; sysmgr service start lightdm</li>
+                    <li>Login to root user with password root</li>
+                </ol>
+            </div>
         </div>
-        <br>
-        <i>* if issue with virtualbox to start then try this 'modprobe vboxdrv' or restart once</i>
-        <br>
-        <li>
-            Create a new linux x86_64 bits virtual machine with at least 1024 MiB Memory and 2048 MiB Storage
-        </li>
-        <br>
-        <li>
-            load releax iso in virtual machine and boot it<br> and login with username 'root' and passwd 'root'
-        </li>
-        <br>
-
-        <li>
-            create (if necessary) the required partitions (at least root partition)
-            <div class="script">
-                <code>$ cfdisk /dev/sda  # to start disk partition tool</code><br>
-                <code>$ mkfs.ext4 /dev/sda1      # to format the selected disk into ext4</code><br>
-            </div>
-        </li>
-        <br>
-        <li>
-            execute releax-installer to automate the installation process
-            <div class="script">
-                <code>$ releax-installer</code>
-            </div>
-            <i>ENV variables ROOTS=/mnt and PACKAGES=/packages to configure build if err comes</i>
-        </li>
-        <br>
-        <li>
-            follow the instruction to complete the installation process,
-            <br> installer ask you to enter
-            <ul>
-                <li>root password ------------------ # Enter 2 Times</li>
-                <li>Default username ------------- # Small letters with character starting</li>
-                <li>users password ---------------- # Enter 2 Times</li>
-                <li>TimeZone ------------------------- # if you have no idea press enter or type Asia/Kolkata</li>
-                <li>Bootloader ----------------------- # if following the instruction ditto then type /dev/sda</li>
-            </ul>
-        </li>
-        <br>
-
-        <li>
-            Edit <i style="color: green">/etc/fstab, /etc/bootup/init, /etc/bootup/restart, /etc/hostname </i> or any other thing you want
-        </li>
-        <br>
-        <i>i you didn't saw any error then you have done every thing write and reboot with the command that will shown on the screen</i>
-        <br>
-    </ul>
-    <h4>Horry ! if every thing is done correctly and god wants , then Remove the releax iso and reboot the virtual machine</h4>
-</p>
+    </div>
 </div>
-<a style="text-decoration: none;" href="0.1.a/handbook.html"><button class="Download">releax 0.1.a handbook</button></a> {% endblock %}
+{% endblock %}
