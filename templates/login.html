@@ -1,9 +1,14 @@
 {% extends 'base.html' %} {% block container %}
-<form action="" method="post">
-    <input style="display: block" type="text" placeholder="User ID" name="userid">
-    <input style="display: block " type="password " placeholder="Passcode " name="passcode ">
-    <button type="submit " value="Login ">Login</button>
-</form>
-{% if err %}
-<p class="error "><strong>Error:</strong> {{ err }}</p>
-{% endif %} {% endblock %}
+    <div class="register-photo" style="background-color: rgb(255,255,255);">
+        <!-- Start: Form Container -->
+        <div class="form-container"><img class="img-fluid" src="{{ url_for('static',filename='assets/img/logo.svg') }}" style="margin: auto;">
+            <form action="" method="post">
+                <h2 class="text-center"><strong>Login</strong></h2>
+                <div class="form-group"><input class="form-control" type="text" name="email" placeholder="email" required></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Login</button></div>
+            </form>
+        </div>
+        <!-- End: Form Container -->
+    </div>
+    {% endblock %}
