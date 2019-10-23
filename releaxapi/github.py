@@ -14,9 +14,13 @@ class github:
     # get latest commit of github repos
     def get_commits(self,repo,count = 10):
         url = self.api_url + 'repos/%s/%s/commits?page=1&amp;per_page=%s&amp;callback=voidcommits&amp;sha=master' % (self.account,repo,str(count))
-        print(url)
         return json.loads(requests.get(url= url).text.replace('/**/voidcommits(','')[1:])
 
+    # temporary get my commits
+    def __user_commits__(self):
+        url = 'https://api.github.com/users/%s/events' % self.account
+        commits_data = self.__get_json__(url)
+        return commits_data
     # get json from url
     def __get_json__(self, url): 
         return json.loads(requests.get(url= url).text.replace('/**/voidcommits(',''))
