@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template, request, redirect, url_for
-from releaxapi import github
+from releaxapi import github, team
 import requests
 import config
 import requests
@@ -9,42 +9,45 @@ import json
 
 app = Flask(__name__)
 @app.route('/')
-def index():
+def indexApi():
     return render_template(
         'index.html',
         data = config.release_data
     )
 
 @app.route('/wiki')
-def wiki():
+def wikiApi():
     return render_template(
         'wiki.html',
         data = config.release_data
     )
 
 @app.route('/team')
-def team():
+def teamApi():
+    t = team.loadTeam("static/data/team.json")
+    releax_team = t.getTeam()
     return render_template(
         'team.html',
-        data = config.release_data
+        ReleaxTeam = releax_team
     )
 
-'''
-@app.route('/news')
-def news():
-    g = github.github('releax')
-    reposdata = {}
-    for repo in g.get_repos():
-        reposdata[repo['name']] = g.get_commits(repo['name'])
 
+@app.route('/news')
+def newsApi():
+    g = github.github('itsmanjeet')
+    repos = g.__user_commits__()
+    print(repos)
     return render_template(
         'news.html',
-        title = 'news',
-        heading = 'releax news',
-        subheading = 'things going on here',
-        repos = reposdata,
+        repos = repos,
     )
-'''
+
+@app.route('/join')
+def join():
+    return render_template(
+        'join.html'
+    )
+
 # Route for handling login page logic
 @app.route('/login', methods = ['GET','POST'])
 def login():
