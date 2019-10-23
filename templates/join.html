@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block container %}
+    <div class="register-photo" style="background-color: rgb(255,255,255);">
+        <!-- Start: Form Container -->
+        <div class="form-container"><img class="img-fluid" src="{{ url_for('static',filename='assets/img/logo.svg') }}" style="margin: auto;">
+            <form action="https://formspree.io/releax.org@gmail.com" method="post">
+                <h2 class="text-center"><strong>join releax gnu/linux team</strong></h2>
+                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" required></div>
+                <div class="form-group"><input class="form-control" type="text" name="email" placeholder="email" required></div>
+                <div class="form-group"><input class="form-control" type="text" name="github" placeholder="github profile" required></div>
+                <div class="form-group"><label class="form-check-label"><input class="form-check-input" type="checkbox" required>I can work without money</label></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Apply</button></div>
+            </form>
+        </div>
+        <!-- End: Form Container -->
+    </div>
+    {% endblock %}
