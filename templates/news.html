@@ -1,22 +1,10 @@
-{% extends 'base.html' %} {% block container %} {% for d in repos %}
-<button type="button" class="collapse">{{ d }}</button>
-<div class="content">
-    {{repos[d]}}
-</div>
+{% extends 'base.html' %} {% block container %}
+<div class="p-5 mr-auto d-flex justify-content-center">
+<ul class="list-group">{% for d in repos %}
+    {% for j in d['payload']['commits'] %}
+    <li class="p-4 list-group-item"> <a href="{{ j['url'] }}">{{j['message']}} </a> </li>
+    {% endfor %}
 {% endfor %}
-<script>
-    var coll = document.getElementsByClassName('collapse');
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener('click', function() {
-            this.classList.toggle('active');
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
-            }
-        });
-    }
-</script> {% endblock %}
+</ul>
+</div>
+ {% endblock %}
