@@ -9,14 +9,16 @@
         <!-- End: Intro -->
         <!-- Start: People -->
         <div class="row people">
+            {% for member in ReleaxTeam %}
             <div class="col-md-6 col-lg-4 item">
                 <div class="box"><img class="rounded-circle" src="{{ url_for('static',filename='assets/img/me.jpg') }}">
-                    <h3 class="name">Manjeet Saini</h3>
-                    <p class="title">Lead Developer</p>
-                    <p class="description">releax with be the future os for your system</p>
-                    <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    <h3 class="name">{{member['name']}}</h3>
+                    <p class="title">{{member['title']}}</p>
+                    <p class="description">{{ member['description'] }}</p>
+                    <div class="social"><a href="{{ member['profile']['github'] }}"><i class="fa fa-github"></i></a><a href="{{ member['profile']['twitter'] }}"><i class="fa fa-twitter"></i></a><a href="{{ member['profile']['instagram'] }}"><i class="fa fa-instagram"></i></a></div>
                 </div>
             </div>
+            {% endfor %}
         </div>
         <!-- End: People -->
     </div>
