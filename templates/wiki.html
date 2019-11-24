@@ -9,8 +9,14 @@
                 <!-- End: Intro -->
                 <!-- Start: Text -->
                 <div class="text">
-                    <p>releax gnu/linux {{ data['version'] }} {{ data['release'] }} is a testing relese for testers to check it for working on different hardwares and different functionalities</p>
-                    <p>this release can be tested either on virtual environment &nbsp;or on real hardware</p>
+                    <p>releax gnu/linux is a opensouce gnu/linux base operating system for computers based on x86_64 architecture. releax os adheres to 4 principle: innovative, simplicity, stablility and complete.</p>
+                    <ul>
+                        <li><b>INNOVATIVE:</b> releax os serves self develop tools and technique to ease the life and mantaince of system.</li>
+                        <li><b>SIMPLICITY:</b> releax os provide system managment tools, *mgr to help users to mantain their os, and xfce desktop environment to provide and a simple and light desktop experience</li>
+                        <li><b>STABILITY:</b> releax serve the stable yet latest release of package , release by the developers</li>
+                        <li><b>COMPLETE:</b> releax os didn't released in parts , but served as a complete OS containing all necessary tools and apps used in daily life</li>
+                    </ul>    
+                    
                     <h2>Requirements</h2>
                     <ul>
                         <li>Architecture : {{ data["sys"]["arch"] }}</li>
@@ -24,11 +30,11 @@
                 </div>
                 <!-- End: Text -->
                 <ol>
-                    <li>Setup Enviroment, (i.e. bootable pendrive or virtual environment )</li>
-                    <li>Boot to releax system</li>
-                    <li>when cli login is prompt, login as root with password : root</li>
-                    <li>start lightdm display manager using -&gt; sysmgr service start lightdm</li>
-                    <li>Login to root user with password root</li>
+                    <li>** releax {{ data['version'] }} is a {{ data['release'] }} release hence might contain bugs and missing functionalities</li>
+                    <li>** this is a test release for testing and debugging purposes</li>
+                    <li>Download the iso and test_drive.sh from the download link</li>
+                    <li>execute test_drive.sh (qemu is required to test)</li>
+                    <li>Login to 'root' user with password 'root'</li>
                 </ol>
             </div>
         </div>
