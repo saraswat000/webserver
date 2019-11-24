@@ -2,7 +2,7 @@
         "version" : "0.1.b",
         "release" : "beta",
         "name" : "beta",
-        "url" : "https://sourceforge.net/projects/releax/files/ISO/Beta/0.1/",
+        "url" : "https://sourceforge.net/projects/releaxos/files/ISO/Beta/0.1/",
 
         "sys" : {
             "arch" : "x86_64",
