@@ -1,0 +1,27 @@
+[
+    {
+        "title" : "Independent",
+        "desc" : "releax os is developed from scratch. and doesn't dependends on any other distro or didn't use any existing distro as its base"
+    },
+    {
+        "title" : "Freedom",
+        "desc" : "releax os is a gnu/linux distro and avaliable freely to modify, distribute and redistribute."
+    },
+    {
+        "title" : "Simple",
+        "desc" : "all the tools and techniques used in releax os provide easily operatability"
+    },
+    {
+        "title" : "*mgr",
+        "desc" : "releax os provide homegrown system managment tools to help user to manage system easily and safely"
+    },
+    {
+        "title" : "Openrc",
+        "desc" : "releax os uses openrc as its init system and service manager for fast bootup and easy (traditional) managment"
+    },
+    {
+        "title" : "Xfce",
+        "desc" : "Xfce is selected to provide desktop interface and utilities to releax os for its simplicity, efficiency and light weight"
+    }
+
+]

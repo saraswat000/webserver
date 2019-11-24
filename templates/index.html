@@ -23,30 +23,12 @@
         <!-- End: Intro -->
         <!-- Start: Features -->
         <div class="row features">
+            {% for feat in Features %}
             <div class="col-sm-6 col-lg-4 item">
-                <h3 class="name">Independent</h3>
-                <p class="description">releax gnu/linux is a independently developed gnu/linux distribution, entirely developed by community</p>
+                <h3 class="name">{{ feat['title'] }}</h3>
+                <p class="description">{{ feat['desc'] }}</p>
             </div>
-            <div class="col-sm-6 col-lg-4 item">
-                <h3 class="name">Customizable</h3>
-                <p class="description">with the customizablity of xfce desktop enviroment, releax can be customized in the way you want</p>
-            </div>
-            <div class="col-sm-6 col-lg-4 item">
-                <h3 class="name">Openrc init</h3>
-                <p class="description">releax use openrc init system to bootup, to provide a traditional like bootup</p>
-            </div>
-            <div class="col-sm-6 col-lg-4 item">
-                <h3 class="name">Sysmgr</h3>
-                <p class="description">sysmgr is a home grown system manager for releax, that help you to manager you system efficiently and easily</p>
-            </div>
-            <div class="col-sm-6 col-lg-4 item">
-                <h3 class="name">App</h3>
-                <p class="description">app is a home grown application manager for releax, that help to manager your faviourate applications&nbsp;</p>
-            </div>
-            <div class="col-sm-6 col-lg-4 item">
-                <h3 class="name">Freedom and Privacy</h3>
-                <p class="description">releax gnu/linux respect your freedom and privacy</p>
-            </div>
+            {% endfor %}
         </div>
         <!-- End: Features -->
     </div>

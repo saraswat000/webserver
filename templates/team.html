@@ -11,7 +11,7 @@
         <div class="row people">
             {% for member in ReleaxTeam %}
             <div class="col-md-6 col-lg-4 item">
-                <div class="box"><img class="rounded-circle" src="{{ url_for('static',filename='assets/img/me.jpg') }}">
+                <div class="box"><img class="rounded-circle" src="{{ url_for('static',filename='graphics/team/') }}{{member['name']}}.jpg">
                     <h3 class="name">{{member['name']}}</h3>
                     <p class="title">{{member['title']}}</p>
                     <p class="description">{{ member['description'] }}</p>

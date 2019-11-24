@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template, request, redirect, url_for
-from releaxapi import github, team
+from releaxapi import github, team, features
 import requests
 import config
 import requests
@@ -10,8 +10,11 @@ import json
 app = Flask(__name__)
 @app.route('/')
 def indexApi():
+    f = features.load_features("static/data/features.json")
+    all_features = f.get_features()
     return render_template(
         'index.html',
+        Features = all_features,
         data = config.release_data
     )
 
@@ -36,7 +39,6 @@ def teamApi():
 def newsApi():
     g = github.github('itsmanjeet')
     repos = g.__user_commits__()
-    print(repos)
     return render_template(
         'news.html',
         repos = repos,
@@ -56,13 +58,10 @@ def login():
         if request.form['userid'] != 'admin' or request.form['passcode'] != 'admin':
             err = 'Invalid Credentials'
         else:
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('/'))
     return render_template(
         'login.html',
-         err = err,
-         title = 'login',
-         heading = 'releax Home',
-         subheading = 'Login to your account')
+         err = err,)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,5 @@
+public/
+tmp/
+passenger_wsgi.py
+*__pycache__*
+
