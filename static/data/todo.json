@@ -1,0 +1,32 @@
+[
+    {
+        "type": "Bug",
+        "msg": "power related permission issue with normal user",
+        "complete": {
+            "Target": "xfce4 session-manager",
+            "Data": "Shutdown, Restart etc button inactive for normal user\nmight be polkit releate permission issue or configuration error with session-manager"
+        },
+        "url": "https://github.com/releax-pkgs/extra/tree/master/recipie/polkit"
+    },
+
+    {
+        "type": "Feature",
+        "msg": "app - A portable app manager",
+        "complete": {
+            "Target": "app",
+            "Data": "cli app to install any type of linux able app, like appimage, debian, arch packages etc"
+        },
+        "url": "https://github.com/releax/app"
+
+    },
+    {
+        "type": "Feature",
+        "msg": "Apportunity - Graphication Installer",
+        "complete": {
+            "Target": "app",
+            "Data": "gotk3 based graphical installer to ease the installtion process"
+        },
+        "url": "https://github.com/releax/apportunity"
+
+    }
+]

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template, request, redirect, url_for
-from releaxapi import github, team, features
+from releaxapi import github, team, data
 import requests
 import config
 import requests
@@ -10,8 +10,8 @@ import json
 app = Flask(__name__)
 @app.route('/')
 def indexApi():
-    f = features.load_features("static/data/features.json")
-    all_features = f.get_features()
+    f = data.load_json("static/data/features.json")
+    all_features = f.get_json()
     return render_template(
         'index.html',
         Features = all_features,
@@ -25,23 +25,14 @@ def wikiApi():
         data = config.release_data
     )
 
-@app.route('/team')
-def teamApi():
-    t = team.loadTeam("static/data/team.json")
-    releax_team = t.getTeam()
-    return render_template(
-        'team.html',
-        ReleaxTeam = releax_team
-    )
 
-
-@app.route('/news')
+@app.route('/todo')
 def newsApi():
-    g = github.github('itsmanjeet')
-    repos = g.__user_commits__()
+    f = data.load_json("static/data/todo.json")
+    todo = f.get_json()
     return render_template(
-        'news.html',
-        repos = repos,
+        'todo.html',
+        ToDo = todo,
     )
 
 @app.route('/join')
@@ -50,6 +41,11 @@ def join():
         'join.html'
     )
 
+@app.route('/requestfeature')
+def requestFeature():
+    return render_template(
+        'requestFeature.html'
+    )
 # Route for handling login page logic
 @app.route('/login', methods = ['GET','POST'])
 def login():

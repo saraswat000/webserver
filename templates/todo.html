@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% block container %}
+<style>
+    .collapsible {
+        padding: 18px;
+        width:fit-content;
+        font-size: 15px;
+    }
+    .collapsible:before {
+        content: "⮟";
+    }
+    
+    .content {
+        padding: 0 18px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+    }
+</style>
+
+<div class="container">
+    <h2 class="text-center">ToDo</h2>
+    <p class="text-center">Upcomming features and bugs</p>
+</div>
+
+<div class="p-5 mr-auto d-flex justify-content-center">
+   
+<ul class="list-group">{% for tsk in ToDo %}
+    <li class="p-4 list-group-item">
+    <button type="button" class="collapsible btn btn-default btn-sm">
+         {{tsk['msg']}}
+    </button>
+    <div class="content">
+        <br>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">Type</th>
+                    <td>{{tsk['type']}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Target</th>
+                    <td>{{tsk['complete']['Target']}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Data</th>
+                    <td>{{tsk['complete']['Data']}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Source</th>
+                    <td><a href="{{tsk['url']}}">Click here</a></td>
+                </tr>
+            </tbody>
+            
+        </table>
+        </p>
+    </div>
+    </li>
+{% endfor %}
+</ul>
+</div>
+<div class="p-5 mr-auto d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ '/requestfeature' }}">
+        Request Feature
+    </a>
+</div>
+<script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+ {% endblock %}
