@@ -1,13 +1,9 @@
 {% extends 'base.html' %} {% block container %}
 <style>
-    .collapsible {
-        padding: 18px;
-        width:fit-content;
-        font-size: 15px;
+    .dropdown-toggle {
+       background-color: darkgrey;
     }
-    .collapsible:before {
-        content: "⮟";
-    }
+    
     
     .content {
         padding: 0 18px;
@@ -26,7 +22,7 @@
    
 <ul class="list-group">{% for tsk in ToDo %}
     <li class="p-4 list-group-item">
-    <button type="button" class="collapsible btn btn-default btn-sm">
+    <button type="button" class="btn btn-secondary dropdown-toggle">
          {{tsk['msg']}}
     </button>
     <div class="content">
@@ -64,7 +60,7 @@
     </a>
 </div>
 <script>
-        var coll = document.getElementsByClassName("collapsible");
+        var coll = document.getElementsByClassName("dropdown-toggle");
         var i;
         
         for (i = 0; i < coll.length; i++) {
